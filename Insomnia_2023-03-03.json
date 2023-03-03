@@ -1,0 +1,210 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-03-03T22:14:08.702Z",
+  "__export_source": "insomnia.desktop.app:v2022.7.5",
+  "resources": [
+    {
+      "_id": "req_5ea3810ceaae4b55a63226c5711ba618",
+      "parentId": "wrk_696d6438d3164103b8474428b4e681cc",
+      "modified": 1677751292214,
+      "created": 1677616662361,
+      "url": "https://api.ecoledirecte.com/v3/login.awp",
+      "name": "AUTH",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "text/plain",
+        "text": "data={\"identifiant\":\"{% prompt 'Login', 'Login', '', '', false, true %}\",\"motdepasse\":\"{% prompt 'Password', 'Password', '', '', false, true %}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_bee54c9f90a0457496c9867f51e5827c",
+          "name": "User-Agent",
+          "value": "{{ _.userAgent }}",
+          "description": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": "text/plain",
+          "id": "pair_7e017438bdb341479dd693b79b630048"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "",
+        "password": ""
+      },
+      "metaSortKey": -1677642375217.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_696d6438d3164103b8474428b4e681cc",
+      "parentId": null,
+      "modified": 1677616649075,
+      "created": 1677616649075,
+      "name": "API Ecole directe",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_c8725829fa7349c487b3c22af8372969",
+      "parentId": "fld_acb76dea019d41d1a6154adaba554104",
+      "modified": 1677751239215,
+      "created": 1677751014286,
+      "url": "{{ _.base_url }}/classes/{% prompt 'ID CLASSE', 'ID CLASSE', '', '', false, true %}/eleves.awp?verbe=get",
+      "name": "LISTE",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "text/plain",
+        "text": "data={}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "text/plain",
+          "id": "pair_da6e720040bb4431bb15a67b641916fd"
+        },
+        {
+          "id": "pair_95df22947d88461baaca60aa205db67f",
+          "name": "X-Token",
+          "value": "{{ _.token }}",
+          "description": ""
+        },
+        {
+          "id": "pair_997347b40daf4ff6819055cf8da2ce66",
+          "name": "User-Agent",
+          "value": "{{ _.userAgent }}",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1677751014286,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_acb76dea019d41d1a6154adaba554104",
+      "parentId": "wrk_696d6438d3164103b8474428b4e681cc",
+      "modified": 1677751293320,
+      "created": 1677750993367,
+      "name": "ETUDIANTS",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1677629788426.875,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_d1569ebb222e48d895ef65c16e37d3ba",
+      "parentId": "fld_acb76dea019d41d1a6154adaba554104",
+      "modified": 1677751401178,
+      "created": 1677751311505,
+      "url": "{{ _.base_url }}/eleves/{% prompt 'ID Etudiant', 'ID Etudiant', '', '', false, true %}/viescolaire.awp?verbe=get",
+      "name": "VIE-SCOLAIRE",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "text/plain",
+        "text": "data={}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "text/plain",
+          "id": "pair_da6e720040bb4431bb15a67b641916fd"
+        },
+        {
+          "id": "pair_95df22947d88461baaca60aa205db67f",
+          "name": "X-Token",
+          "value": "{{ _.token }}",
+          "description": ""
+        },
+        {
+          "id": "pair_997347b40daf4ff6819055cf8da2ce66",
+          "name": "User-Agent",
+          "value": "{{ _.userAgent }}",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1677696694751.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_e42ae5d4502def130b25030eb58c0cdf326b5670",
+      "parentId": "wrk_696d6438d3164103b8474428b4e681cc",
+      "modified": 1677621058992,
+      "created": 1677616649078,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "{{ _.protocol }}://{{ _.domain }}{{ _.path }}",
+        "protocol": "https",
+        "domain": "apip.ecoledirecte.com",
+        "path": "/v3",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+        "token": "{% response 'body', 'req_5ea3810ceaae4b55a63226c5711ba618', 'b64::JC50b2tlbg==::46b', 'when-expired', 900 %}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "protocol",
+          "domain",
+          "path",
+          "userAgent",
+          "token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1677616649078,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_e42ae5d4502def130b25030eb58c0cdf326b5670",
+      "parentId": "wrk_696d6438d3164103b8474428b4e681cc",
+      "modified": 1677616649079,
+      "created": 1677616649079,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_d9bfc04e50b84dba9337afd83db3589c",
+      "parentId": "wrk_696d6438d3164103b8474428b4e681cc",
+      "modified": 1677616649075,
+      "created": 1677616649075,
+      "fileName": "API Ecole directe",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
